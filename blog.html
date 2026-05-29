@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & Writeups — Tejas Prakash Bhat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">TB<span class="blink">_</span></a>
+    <div class="nav-links">
+      <a href="index.html#about">about</a>
+      <a href="index.html#experience">exp</a>
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#skills">skills</a>
+      <a href="blog.html" style="color: var(--accent)">blog</a>
+      <a href="index.html#contact">contact</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#skills">skills</a>
+    <a href="blog.html">blog</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="section-label">// writeups & research</div>
+  <h1>Blog</h1>
+  <p>Security writeups, CTF solutions, research notes, and technical deep-dives.</p>
+</div>
+
+<div class="blog-search-bar">
+  <input type="text" id="searchInput" placeholder="search posts..." autocomplete="off" />
+</div>
+
+<div class="blog-tags" id="tagFilters">
+  <button class="tag-filter active" data-tag="all">all</button>
+  <button class="tag-filter" data-tag="writeup">writeup</button>
+  <button class="tag-filter" data-tag="ctf">ctf</button>
+  <button class="tag-filter" data-tag="research">research</button>
+  <button class="tag-filter" data-tag="malware">malware</button>
+  <button class="tag-filter" data-tag="web">web</button>
+  <button class="tag-filter" data-tag="ai-security">ai-security</button>
+</div>
+
+<div class="blog-posts-grid" id="postsGrid">
+  <!-- Posts are loaded from posts/index.json -->
+</div>
+
+<footer>
+  <p>Tejas Prakash Bhat · Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+</footer>
+
+<script>
+// -------------------------------------------------------
+// HOW TO ADD A NEW POST:
+// 1. Create a new file in posts/ folder e.g. posts/my-post.md
+// 2. Add an entry to the POSTS array below
+// -------------------------------------------------------
+const POSTS = [
+  // Example — uncomment and edit when you write a post:
+  // {
+  //   slug: "idor-race-condition-writeup",
+  //   title: "IDOR + Race Condition: Double Spend in Production",
+  //   excerpt: "How I chained an IDOR with a race condition to demonstrate a double-spend attack on a live e-commerce platform during a grey-box pentest.",
+  //   tag: "writeup",
+  //   date: "2025-06-01"
+  // },
+  // {
+  //   slug: "gnn-malware-evasion",
+  //   title: "Evading GNN-Based Malware Detectors via Graph Perturbations",
+  //   excerpt: "Research notes on how structure-preserving edge insertions can degrade GNN classifier confidence while keeping malware functionality intact.",
+  //   tag: "research",
+  //   date: "2025-07-15"
+  // },
+];
+
+let activeTag = 'all';
+let searchQuery = '';
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function renderPosts() {
+  const grid = document.getElementById('postsGrid');
+  const filtered = POSTS.filter(p => {
+    const tagMatch = activeTag === 'all' || p.tag === activeTag;
+    const searchMatch = !searchQuery || p.title.toLowerCase().includes(searchQuery) || p.excerpt.toLowerCase().includes(searchQuery);
+    return tagMatch && searchMatch;
+  });
+
+  if (filtered.length === 0) {
+    grid.innerHTML = POSTS.length === 0
+      ? `<div class="no-posts">// no posts yet — check back soon</div>`
+      : `<div class="no-posts">// no posts match your filter</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(p => `
+    <a href="posts/${p.slug}.html" class="blog-card">
+      <div class="blog-card-meta">
+        <span class="blog-card-tag">${p.tag}</span>
+        <span class="blog-card-date">${formatDate(p.date)}</span>
+      </div>
+      <h3>${p.title}</h3>
+      <p>${p.excerpt}</p>
+    </a>
+  `).join('');
+}
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.toLowerCase();
+  renderPosts();
+});
+
+document.getElementById('tagFilters').addEventListener('click', e => {
+  if (!e.target.classList.contains('tag-filter')) return;
+  document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  activeTag = e.target.dataset.tag;
+  renderPosts();
+});
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+renderPosts();
+</script>
+</body>
+</html>

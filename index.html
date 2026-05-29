@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tejas Prakash Bhat — Cybersecurity Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scanline overlay -->
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- Navbar -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">TB<span class="blink">_</span></a>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#experience">exp</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="blog.html">blog</a>
+      <a href="#contact">contact</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">about</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#skills">skills</a>
+    <a href="blog.html">blog</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-bg-text" aria-hidden="true">SEC</div>
+  <div class="hero-content">
+    <div class="hero-tag">// cybersecurity engineer & AI security researcher</div>
+    <h1 class="hero-name">Tejas<br><span class="name-accent">Prakash Bhat</span></h1>
+    <p class="hero-sub">Red Team · Adversarial ML · AI/LLM Security · Malware Analysis</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">view work</a>
+      <a href="#contact" class="btn btn-outline">get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Pentest engagements</span></div>
+      <div class="stat"><span class="stat-num">OWASP</span><span class="stat-label">Top 10 coverage</span></div>
+      <div class="stat"><span class="stat-num">GNN</span><span class="stat-label">Evasion research</span></div>
+    </div>
+  </div>
+  <div class="hero-terminal" aria-hidden="true">
+    <div class="terminal-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span>tejas@kali</span></div>
+    <div class="terminal-body" id="terminalBody"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="section-label">// 01 — about</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Offensive security engineer<br>with a research mindset.</h2>
+      <p>I'm a B.E. CSE (AI & ML) student at Sahyadri College, Mangaluru, specializing in cybersecurity and AI security research. I conduct real-world web application penetration tests, build offensive security tooling, and research adversarial attacks on machine learning models.</p>
+      <p>Currently researching adversarial evasion of GNN-based malware detectors and preparing contributions to open-source AI pentesting infrastructure at Armur AI.</p>
+      <a href="assets/resume.pdf" class="btn btn-outline" download>download resume</a>
+    </div>
+    <div class="about-details">
+      <div class="detail-item"><span class="detail-label">location</span><span>Mangaluru, KA, India</span></div>
+      <div class="detail-item"><span class="detail-label">degree</span><span>B.E. CSE (AI & ML)</span></div>
+      <div class="detail-item"><span class="detail-label">college</span><span>Sahyadri College of Engg.</span></div>
+      <div class="detail-item"><span class="detail-label">focus</span><span>Red Team · Adversarial ML</span></div>
+      <div class="detail-item"><span class="detail-label">github</span><a href="https://github.com/Phiserte" target="_blank">github.com/Phiserte</a></div>
+      <div class="detail-item"><span class="detail-label">email</span><a href="mailto:tej200416@gmail.com">tej200416@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="section-label">// 02 — experience</div>
+  <h2 class="section-title">Work & Research</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-meta">
+          <span class="timeline-company">Sahynex Techsolutions</span>
+          <span class="timeline-date">2024 – 2025</span>
+        </div>
+        <div class="timeline-role">Software Engineer — Security Testing</div>
+        <div class="timeline-type">Remote · Web Application Penetration Testing</div>
+        <ul>
+          <li>Black-box & grey-box pentesting across 3–4 live production web apps against OWASP Top 10</li>
+          <li>Discovered and exploited IDOR vulnerabilities allowing unauthorized access to user data</li>
+          <li>Identified Race Conditions in concurrent transactional endpoints — demonstrated double-spend, coupon reuse, and privilege escalation vectors</li>
+          <li>Detected Missing Rate Limiting on auth, OTP, and sensitive API endpoints</li>
+          <li>Probed HTTP Request Smuggling (CL.TE & TE.CL), Broken Access Control, Business Logic flaws</li>
+          <li>Uncovered exposed Supabase anon key in client-side code granting unauthorized DB read access</li>
+          <li>Delivered structured pentest reports with PoC exploits, CVSS scores, and remediation guidance</li>
+        </ul>
+        <div class="timeline-tags">
+          <span>OWASP Top 10</span><span>Burp Suite</span><span>IDOR</span><span>Race Conditions</span><span>HTTP Smuggling</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-meta">
+          <span class="timeline-company">Armur AI — Pentest Swarm AI</span>
+          <span class="timeline-date">2025 – Present</span>
+        </div>
+        <div class="timeline-role">Open Source Contributor</div>
+        <div class="timeline-type">Python · AI Agents · Burp Suite · sqlmap</div>
+        <ul>
+          <li>Contributing to an open-source agentic pentesting framework using swarm-intelligence primitives</li>
+          <li>Analysed stigmergic blackboard architecture (Postgres + pgvector) with decaying pheromone weights</li>
+          <li>Identifying new agent trigger predicates, offensive tool integrations, WAF-evasive payload generation</li>
+        </ul>
+        <div class="timeline-tags">
+          <span>AI Agents</span><span>CrewAI</span><span>Python</span><span>Agentic Pentesting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot research"></div>
+      <div class="timeline-content">
+        <div class="timeline-meta">
+          <span class="timeline-company">Independent Research — RUSU</span>
+          <span class="timeline-date">2025 – Present</span>
+        </div>
+        <div class="timeline-role">Adversarial Evasion of GNN Malware Detectors</div>
+        <div class="timeline-type">Python · PyTorch Geometric · Adversarial ML</div>
+        <ul>
+          <li>Researching bypassing Graph Neural Network (GNN)-based malware detectors via API call & CFG analysis</li>
+          <li>Designing structure-preserving graph perturbations (targeted edge insertions/deletions) to degrade classifier confidence while maintaining malware functionality on live PE samples</li>
+          <li>Plans to open-source findings and submit to academic security community</li>
+        </ul>
+        <div class="timeline-tags">
+          <span>PyTorch Geometric</span><span>GNN</span><span>Adversarial ML</span><span>Binary Analysis</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="section-label">// 03 — projects</div>
+  <h2 class="section-title">Notable Work</h2>
+  <div class="projects-grid">
+
+    <div class="project-card featured">
+      <div class="project-header">
+        <span class="project-tag">Malware Dev</span>
+        <span class="project-year">2024</span>
+      </div>
+      <h3>Malware Development & Analysis (Windows)</h3>
+      <p>Engineered a suite of Windows malware samples in C++ simulating advanced adversary techniques: Process Injection, DLL Injection, Process Hollowing, AMSI Bypass, AES file encryption, registry persistence.</p>
+      <p>Conducted dynamic behavioural analysis and extracted host-based IoCs using ProcMon, Process Hacker, and CAPE Sandbox.</p>
+      <div class="project-stack">
+        <span>C++</span><span>WinAPI</span><span>Sysinternals</span><span>CAPE Sandbox</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag">Adversarial ML</span>
+        <span class="project-year">2024</span>
+      </div>
+      <h3>Adversarial Attack Detection — Medical Imaging</h3>
+      <p>Fine-tuned DenseNet-121 for chest X-ray classification (84% accuracy). Evaluated resilience against FGSM, BIM, PGD, and one-pixel attacks. Engineered a 3-phase defense pipeline: TVM denoising → UNet restoration → JPEG compression.</p>
+      <div class="project-stack">
+        <span>Python</span><span>PyTorch</span><span>DenseNet-121</span><span>UNet</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag">Web Security</span>
+        <span class="project-year">2023</span>
+      </div>
+      <h3>Web Application Pentesting Lab</h3>
+      <p>Built a purposefully vulnerable Django app covering Session Fixation, XSS (Reflected & Stored), SQLi, CSRF, Broken Access Control, and EXIF-metadata Stored XSS. Developed a custom Python crawler + vulnerability scanner.</p>
+      <div class="project-stack">
+        <span>Django</span><span>Python</span><span>Burp Suite</span><span>OWASP Top 10</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-label">// 04 — skills</div>
+  <h2 class="section-title">Technical Arsenal</h2>
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-pills">
+        <span>Python</span><span>C++</span><span>SQL</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Security Tools</div>
+      <div class="skill-pills">
+        <span>Burp Suite</span><span>Kali Linux</span><span>Nmap</span><span>Shodan</span><span>Metasploit</span><span>sqlmap</span><span>ProcMon</span><span>Process Hacker</span><span>CAPE Sandbox</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">AI / ML Frameworks</div>
+      <div class="skill-pills">
+        <span>PyTorch</span><span>TensorFlow</span><span>PyTorch Geometric</span><span>DenseNet</span><span>UNet</span><span>CrewAI</span><span>Ollama</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Dev & Web</div>
+      <div class="skill-pills">
+        <span>Django</span><span>REST APIs</span><span>Git</span><span>Postman</span><span>MySQL</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Security Domains</div>
+      <div class="skill-pills accent">
+        <span>Web App Pentesting</span><span>Red Teaming</span><span>Malware Dev & Analysis</span><span>AI/LLM Security</span><span>Adversarial ML</span><span>GNN Robustness</span><span>HTTP Request Smuggling</span><span>OWASP Top 10</span><span>MITRE ATT&CK</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-label">// 05 — contact</div>
+  <div class="contact-inner">
+    <h2>Let's connect.</h2>
+    <p>Open to security research collaborations, bug bounty discussions, and internship opportunities.</p>
+    <div class="contact-links">
+      <a href="mailto:tej200416@gmail.com" class="contact-link">
+        <span class="contact-icon">✉</span>
+        <span>tej200416@gmail.com</span>
+      </a>
+      <a href="https://github.com/Phiserte" target="_blank" class="contact-link">
+        <span class="contact-icon">⌥</span>
+        <span>github.com/Phiserte</span>
+      </a>
+      <a href="mailto:tejas.ai22@sahyadri.edu.in" class="contact-link">
+        <span class="contact-icon">✉</span>
+        <span>tejas.ai22@sahyadri.edu.in</span>
+      </a>
+      <a href="tel:+919481677512" class="contact-link">
+        <span class="contact-icon">☎</span>
+        <span>+91-9481677512</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Tejas Prakash Bhat · Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
